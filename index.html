@@ -18,11 +18,39 @@ header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-betwee
 .love{padding:75px 20px;background:linear-gradient(135deg,#f2eaff,#fff0f5 55%,#fff0e7);text-align:center}.notecard{max-width:700px;margin:auto;background:#fffdfb;padding:clamp(26px,6vw,55px);border-radius:23px;box-shadow:var(--shadow)}.notecard h2{font-size:clamp(38px,6vw,56px);margin:12px 0 18px}.notecard>p{font:17px/1.9 'Playfair Display';color:#755c70}.btn{border:0;border-radius:999px;background:linear-gradient(100deg,#d978a4,#a88ce0);color:white;padding:14px 22px;margin:12px 5px 0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 20px #c178a433}.btn.alt{background:#fff;color:#a65b83;border:1px solid #efcddd;box-shadow:none}
 .envelope{width:min(310px,80vw);height:175px;margin:25px auto 8px;position:relative;cursor:pointer;perspective:800px}.envbody{position:absolute;inset:0;background:linear-gradient(145deg,#ffdbe8,#f1e5ff);border-radius:12px;box-shadow:0 12px 28px #9a6b8b25;display:grid;place-items:center;color:#a65b83;font:italic 23px 'Playfair Display'}.envflap{position:absolute;inset:0;background:#f6c8dd;clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .7s;z-index:2}.envelope.open .envflap{transform:rotateX(180deg)}.hint{font-size:10px;color:#9c7890;letter-spacing:.1em}
 .music{max-width:610px;margin:27px auto 0;padding:20px;border-radius:20px;background:#ffffffad;border:1px solid white;display:flex;align-items:center;gap:14px;text-align:left}.disc{width:50px;height:50px;flex:0 0 50px;border-radius:50%;background:conic-gradient(#d978a4,#b7a1ef,#a8d9ee,#ffd0df,#d978a4);display:grid;place-items:center;color:white;font-size:22px;animation:spin 8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.musictext{flex:1;min-width:0}.musictext b{display:block;font:18px 'Playfair Display'}.musictext span{font-size:11px;color:var(--muted)}.music a{font-size:11px;color:#a65b83;text-decoration:none;border:1px solid #e9c8d9;background:#fff;padding:10px 13px;border-radius:999px;white-space:nowrap}
+
+/* Shared-password welcome gate. This is a casual barrier, not server-side security. */
+body.gate-locked{overflow:hidden}
+#passwordGate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 15% 15%,#ffe0ec 0,transparent 38%),radial-gradient(ellipse at 88% 20%,#e7ddff 0,transparent 36%),linear-gradient(135deg,#fffaf8,#fff1f7 55%,#effaff)}
+#passwordGate[hidden]{display:none}
+.gate-card{width:min(440px,100%);padding:clamp(28px,7vw,46px);text-align:center;background:#ffffffdc;border:1px solid #fff;border-radius:26px;box-shadow:0 22px 65px #875d7925;backdrop-filter:blur(12px)}
+.gate-heart{font-size:38px;color:#cf719c}
+.gate-card h2{font:clamp(35px,8vw,48px) 'Playfair Display';margin:10px 0;color:#71475f}
+.gate-card p{font-size:13px;line-height:1.8;color:#806d80}
+#gatePassword{width:100%;padding:15px 17px;border:1px solid #efcddd;border-radius:999px;background:#fffafc;color:#50394c;text-align:center;font:15px 'DM Sans';outline:none;margin:14px 0 5px}
+#gatePassword:focus{border-color:#cf719c;box-shadow:0 0 0 3px #cf719c22}
+#gateError{min-height:20px;color:#b64e72;font-size:12px;margin:7px 0 0}
+.gate-foot{font-size:10px!important;letter-spacing:.1em;text-transform:uppercase;margin-top:20px!important}
+
 footer{text-align:center;padding:60px 20px 42px}footer .big{font:clamp(40px,8vw,70px) 'Playfair Display';color:#a75e88}footer p{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#a58a9d}.modal,.lightbox{position:fixed;inset:0;background:#382536d9;display:none;place-items:center;padding:16px;z-index:20}.modal.show,.lightbox.show{display:grid}.letter{max-width:590px;width:100%;background:#fffaf7;padding:clamp(25px,6vw,50px);border-radius:20px;position:relative;max-height:88svh;overflow:auto}.letter h2{font:42px 'Playfair Display';margin:10px 0 20px;color:#9f5a80}.letter p{font:17px/1.9 'Playfair Display';color:#755c70}.close{position:absolute;right:14px;top:10px;border:0;background:none;font-size:28px;color:#8e6571;cursor:pointer}.lightbox img{max-width:95vw;max-height:86svh;object-fit:contain;border-radius:8px}.lightbox button{position:absolute;top:14px;right:20px;background:none;border:0;color:white;font-size:34px;cursor:pointer}.confetti{position:fixed;top:-20px;z-index:30;pointer-events:none;animation:fall 3.5s linear forwards}@keyframes fall{to{transform:translateY(110svh) rotate(600deg);opacity:0}}
 @media(max-width:700px){header{padding:11px 4vw}header>span{font-size:7px;letter-spacing:.08em}header b{font-size:16px}nav{gap:9px}nav a{font-size:8px}.hero{min-height:82svh;padding:60px 17px 80px}.hero p{font-size:13px}.section{padding:58px 0}.intro{grid-template-columns:1fr;gap:28px}.portrait{width:min(88%,390px)}.portrait img{height:min(110vw,430px)}.copy{text-align:center}.story{padding:45px 0}.steps{grid-template-columns:1fr;gap:9px}.step{padding:13px}.statsgrid{gap:8px}.stat{padding:15px 5px}.stat strong{font-size:30px}.stat span{font-size:7px;letter-spacing:.06em}.gallery{gap:9px}.shot{padding:6px 6px 25px}.shot:nth-child(1){grid-column:span 6;height:240px}.shot:nth-child(2){grid-column:span 6;height:215px;margin-top:22px}.shot:nth-child(3),.shot:nth-child(4),.shot:nth-child(5){grid-column:span 4;height:165px}.shot:nth-child(n+6){grid-column:span 6;height:205px}.shot:after{font-size:10px;bottom:5px}.head{margin-bottom:25px}.music{padding:14px}.musictext b{font-size:15px}.music a{font-size:9px;padding:9px 10px}}
 @media(max-width:370px){header>span:first-child{display:none}nav{gap:7px}.shot:nth-child(3),.shot:nth-child(4),.shot:nth-child(5){height:145px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style></head><body>
+<div id="passwordGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-heart">♡</div>
+    <div class="eyebrow">A little surprise awaits</div>
+    <h2 id="gateTitle">For Babee only.</h2>
+    <p>This tiny corner of the internet was made with love. Enter our little secret password to come in.</p>
+    <form id="gateForm">
+      <input id="gatePassword" type="password" placeholder="Our secret password ♡" autocomplete="current-password" required aria-label="Shared password">
+      <button class="btn" type="submit">Unlock your surprise ♡</button>
+    </form>
+    <p id="gateError" role="alert" aria-live="polite"></p>
+    <p class="gate-foot">Made with love · just for you</p>
+  </div>
+</div>
 <header><span>Vol. 02 · our little universe</span><b>the babee edition ♡</b><nav><a href="#story">story</a><a href="#gallery">photos</a><a href="#letter">letter</a></nav><span>15 · 11 · 2026</span></header>
 <main>
 <section class="hero"><span class="float f1">✿</span><span class="float f2">♡</span><span class="float f3">✧</span><span class="float f4">🦋</span><div><div class="eyebrow">A special issue, made just for you</div><h1>Happy<br><em>Birthday,</em><br>Kabita.</h1><p>To my Babee — the girl whose smile makes my day, whose laugh is my favourite sound, and whose existence makes life a little more magical.</p><div class="pill">Sunday · November 15, 2026 · made with love</div><div><button class="btn" onclick="celebrate()">A little birthday sparkle ✨</button></div></div><div class="scroll">↓ your little universe is just below ↓</div></section>
@@ -40,6 +68,24 @@ footer{text-align:center;padding:60px 20px 42px}footer .big{font:clamp(40px,8vw,
 <div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle"><div class="letter"><button class="close" id="closeLetter" aria-label="Close">×</button><div class="eyebrow">For my favourite girl</div><h2 id="letterTitle">To my Babee ♡</h2><p>Happy birthday, babeeeee!</p><p>I hope today gives you a hundred reasons to smile and at least a thousand reasons to laugh. You have this unfair talent of making everything better just by being there. Your smile? Dangerous. Your laugh? My favourite sound. Your bubu-ness? Completely undefeated.</p><p>Still cannot believe Bumble brought us together and that within days we were BOTH proposing. We really said, “Why wait?” Honestly, very on-brand for us.</p><p>Thank you for calling me Pukulu, for being my favourite notification, and for making even the most ordinary moments feel special. I hope this year brings you everything your heart has been quietly wishing for — and plenty of cute moments with me, obviously.</p><p>Have the prettiest birthday, my Babee. I love you more than all the pastel colours on this website. ♡</p><p>Forever your Pukulu,<br><em>the luckiest person to have matched with you</em> 💗</p></div></div>
 <div class="lightbox" id="lightbox"><button id="closeLightbox" aria-label="Close image">×</button><img id="lightboxImage" alt="Expanded memory"></div>
 <script>
+/* Client-side shared password gate only; GitHub Pages still serves public files. */
+const GATE_HASH='a41185d43d52a0b7fd7bf8f844c5f2b67398254d31d1b9bb280cfa3c418bb4d7';
+const gate=document.getElementById('passwordGate');
+const gateForm=document.getElementById('gateForm');
+const gateInput=document.getElementById('gatePassword');
+const gateError=document.getElementById('gateError');
+function unlockBirthdayPage(){gate.hidden=true;document.body.classList.remove('gate-locked');}
+if(sessionStorage.getItem('babeeBirthdayUnlocked')==='yes'){unlockBirthdayPage();}
+else{document.body.classList.add('gate-locked');gateInput.focus();}
+gateForm.addEventListener('submit',async event=>{
+  event.preventDefault();
+  gateError.textContent='';
+  const bytes=new TextEncoder().encode(gateInput.value);
+  const digest=await crypto.subtle.digest('SHA-256',bytes);
+  const hash=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
+  if(hash===GATE_HASH){sessionStorage.setItem('babeeBirthdayUnlocked','yes');unlockBirthdayPage();}
+  else{gateError.textContent='Not quite, Babee. Try our little secret again ♡';gateInput.select();}
+});
 const modal=document.getElementById('letterModal');function showLetter(){modal.classList.add('show')}document.getElementById('openLetter').addEventListener('click',showLetter);document.getElementById('envelope').addEventListener('click',e=>{e.currentTarget.classList.toggle('open');showLetter()});document.getElementById('envelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.currentTarget.classList.toggle('open');showLetter()}});document.getElementById('closeLetter').addEventListener('click',()=>modal.classList.remove('show'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
 const lightbox=document.getElementById('lightbox'),large=document.getElementById('lightboxImage');document.querySelectorAll('.shot img').forEach(img=>img.addEventListener('click',()=>{large.src=img.src;large.alt=img.alt;lightbox.classList.add('show')}));document.getElementById('closeLightbox').addEventListener('click',()=>lightbox.classList.remove('show'));lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('show')});document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('show');lightbox.classList.remove('show')}});
 function celebrate(){const bits=['💗','💜','🩵','🧡','✨','🌸','♡'];for(let i=0;i<28;i++){const el=document.createElement('span');el.className='confetti';el.textContent=bits[Math.floor(Math.random()*bits.length)];el.style.left=Math.random()*100+'vw';el.style.animationDelay=Math.random()*.8+'s';el.style.fontSize=(15+Math.random()*16)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),4500)}}
